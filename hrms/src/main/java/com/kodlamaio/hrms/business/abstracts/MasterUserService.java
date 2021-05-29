@@ -4,9 +4,9 @@ import java.util.List;
 
 import com.kodlamaio.hrms.core.utilities.results.DataResult;
 import com.kodlamaio.hrms.core.utilities.results.Result;
-import com.kodlamaio.hrms.entities.concretes.Job;
+import com.kodlamaio.hrms.entities.concretes.MasterUser;
 
-public interface JobService {
-			DataResult<List<Job>> getAll();
-			Result add(Job job);
+public interface MasterUserService {
+				Result add(MasterUser masterUser);
+				DataResult<List<MasterUser>> getAll();
 }
