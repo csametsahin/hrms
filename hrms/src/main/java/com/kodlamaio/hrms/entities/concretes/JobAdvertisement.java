@@ -42,7 +42,7 @@ public class JobAdvertisement {
 			private Date dead_line;
 			@Column(name="jobadv_activate")
 			private boolean active;
-			
+			//idleri city_id ile değiştirip insertable false updatable false kaldır ve manytoOne da cascadetype oluştur
 			@ManyToOne()
 			@JoinColumn(name="id",insertable = false,updatable =false)
 			private City city;
@@ -53,7 +53,7 @@ public class JobAdvertisement {
 			
 			@ManyToOne()
 			@JoinColumn(name="master_user_id")
-			private MasterUser masterUser;
+			private MasterUser masterUser; 
 			
 			
 }
