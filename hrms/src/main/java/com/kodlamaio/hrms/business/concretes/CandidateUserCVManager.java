@@ -13,6 +13,7 @@ import com.kodlamaio.hrms.core.utilities.results.SuccessDataResult;
 import com.kodlamaio.hrms.core.utilities.results.SuccessResult;
 import com.kodlamaio.hrms.dataAccess.abstracts.CandidateUserCVDao;
 import com.kodlamaio.hrms.entities.concretes.CandidateUserCV;
+import com.kodlamaio.hrms.entities.dtos.CVDetail;
 
 @Service
 public class CandidateUserCVManager implements CandidateUserCVService {
@@ -44,6 +45,12 @@ public class CandidateUserCVManager implements CandidateUserCVService {
 					public DataResult<List<CandidateUserCV>> getAllSortedSchoolExperience() {
 						Sort sort = Sort.by(Sort.Direction.DESC, "school.endYear");
 						return new SuccessDataResult<List<CandidateUserCV>>(this.userCVDao.findAll(sort));
+					}
+
+
+					@Override
+					public DataResult<List<CVDetail>> getAllCVDetail(int id) {
+						return new SuccessDataResult<List<CVDetail>>(this.userCVDao.getCVDetail(id));
 					}
 					
 }

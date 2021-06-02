@@ -41,7 +41,7 @@ public class CandidateUserCVLanguage {
 	private List<CandidateUserCV> userCV;
 	
 	@ManyToOne()
-	@JoinColumn(name="id",insertable = false,updatable =false)
+	@JoinColumn(name="language_id")
 	private Language language;
 	
 	
